@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NevGenç — SUBÜ & SAÜ Kampüs Platformu</title>
+  <meta name="description" content="NevGenç — SUBÜ ve SAÜ öğrencileri için topluluk, etkinlik ve indirim platformu." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://nevgenc.com/" />
+  <meta property="og:title" content="NevGenç — Kampüs Topluluklarının Tek Adresi" />
+  <meta property="og:description" content="SUBÜ ve SAÜ öğrencileri için topluluklar, etkinlikler ve belediye fırsatları." />
+  <meta property="og:image" content="https://nevgenc.com/logomuz.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="NevGenç — Kampüs Platformu" />
+  <meta name="twitter:image" content="https://nevgenc.com/logomuz.png" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+        as="style" onload="this.rel='stylesheet'" />
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  </noscript>
+  <link rel="stylesheet" href="style.css" />
+  <script>(function(){var t=localStorage.getItem('ng-theme')||'geometric';if(t==='default'||t==='dark-red'||t==='starry')t='geometric';document.documentElement.setAttribute('data-theme',t);}());</script>
+</head>
+<body>
+<canvas id="themeCanvas"></canvas>
+
+<!-- NAV -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="nav-brand">
+      <img src="logomuz.png" alt="NevGenç" class="brand-logo-img" />
+      <div class="brand-texts">
+        <span class="brand-text">NevGenç</span>
+        <span class="brand-sub">SUBÜ & SAÜ</span>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="#topluluklar" class="nav-link">Topluluklar</a>
+      <a href="#universite" class="nav-link">Üniversiteler</a>
+      <a href="https://wa.me/905538832657?text=Merhaba%2C%20i%C5%9Fletmem%20i%C3%A7in%20NevGen%C3%A7%27te%20reklam%20ba%C5%9Fvurusu%20yapmak%20istiyorum." class="nav-btn wa" target="_blank" rel="noopener">Reklam Ver</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="#topluluklar" onclick="toggleMenu()">Topluluklar</a>
+    <a href="#universite" onclick="toggleMenu()">Üniversiteler</a>
+    <a href="https://wa.me/905538832657?text=Merhaba%2C%20i%C5%9Fletmem%20i%C3%A7in%20NevGen%C3%A7%27te%20reklam%20ba%C5%9Fvurusu%20yapmak%20istiyorum." class="nav-btn wa" target="_blank" rel="noopener">Reklam Ver</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero-new">
+  <div class="hero-inner">
+    <div class="partner-bar">
+      <div class="partner-item">
+        <div class="partner-logo">
+          <svg viewBox="0 0 56 56" fill="none">
+            <circle cx="28" cy="28" r="26" fill="rgba(0,82,165,0.08)" stroke="#0052A5" stroke-width="1.5"/>
+            <text x="50%" y="55%" text-anchor="middle" dominant-baseline="middle" fill="#0052A5" font-size="12" font-weight="800" font-family="Inter">SUBÜ</text>
+          </svg>
+        </div>
+        <div class="partner-info">
+          <span class="partner-name">Sakarya Uygulamalı Bilimler Üniversitesi</span>
+          <span class="partner-type">Kamu Üniversitesi</span>
+        </div>
+      </div>
+      <div class="partner-x">×</div>
+      <div class="partner-item">
+        <div class="partner-logo">
+          <svg viewBox="0 0 56 56" fill="none">
+            <circle cx="28" cy="28" r="26" fill="rgba(0,102,51,0.08)" stroke="#006633" stroke-width="1.5"/>
+            <text x="50%" y="55%" text-anchor="middle" dominant-baseline="middle" fill="#006633" font-size="12" font-weight="800" font-family="Inter">SAÜ</text>
+          </svg>
+        </div>
+        <div class="partner-info">
+          <span class="partner-name">Sakarya Üniversitesi</span>
+          <span class="partner-type">Kamu Üniversitesi</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-content-new">
+      <img src="logomuz.png" alt="NevGenç" class="brand-logo-img hero" />
+      <h1 class="hero-title-new">
+        Kampüs<br>
+        topluluklarının<br>
+        <span class="gradient-text-new">tek adresi</span>
+      </h1>
+      <p class="hero-desc-new">
+        SUBÜ ve SAÜ öğrencileri için geliştirilmiş kampüs toplulukları platformu.
+        Topluluğunu keşfet, katıl, büyü.
+      </p>
+      <div class="hero-ctas">
+        <a href="#topluluklar" class="cta-primary">Toplulukları Keşfet</a>
+        <a href="#universite" class="cta-secondary">Üniversiteler ↓</a>
+      </div>
+      <p class="hero-biz">
+        📢 İşletmeniz mi var? <a href="https://wa.me/905538832657?text=Merhaba%2C%20i%C5%9Fletmem%20i%C3%A7in%20NevGen%C3%A7%27te%20reklam%20ba%C5%9Fvurusu%20yapmak%20istiyorum." target="_blank" rel="noopener">Kampüste reklam başvurusu yapın</a>
+      </p>
+    </div>
+
+    <div class="hero-stats-new" id="heroStats">
+      <div class="hstat">
+        <span class="hstat-n" id="statCommunities">—</span>
+        <span class="hstat-l">Topluluk</span>
+      </div>
+      <div class="hstat-div"></div>
+      <div class="hstat">
+        <span class="hstat-n" id="statMembers">—</span>
+        <span class="hstat-l">Üye</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ÜNİVERSİTELER -->
+<section class="section about-section" id="universite">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-label">Hakkında</p>
+      <h2 class="section-title-main">Üniversitelerimiz</h2>
+      <p class="section-sub">NevGenç platformunun iki ana üniversite ortağı</p>
+    </div>
+
+    <div class="about-grid">
+      <!-- SUBÜ -->
+      <div class="about-card2 subu-card2">
+        <div class="acard-header blue-header">
+          <div class="acard-circle blue-circle">SUBÜ</div>
+          <div class="acard-nums">
+            <div class="astat2">
+              <span class="as2-v">7</span>
+              <span class="as2-k">Fakülte</span>
+            </div>
+            <div class="astat2">
+              <span class="as2-v">50+</span>
+              <span class="as2-k">Bölüm</span>
+            </div>
+            <div class="astat2">
+              <span class="as2-v">2018</span>
+              <span class="as2-k">Kuruluş</span>
+            </div>
+          </div>
+        </div>
+        <div class="acard-body">
+          <span class="about-tag blue-tag">Kamu Üniversitesi</span>
+          <h3 class="about-heading">Sakarya Uygulamalı Bilimler Üniversitesi</h3>
+          <p class="about-text">
+            Sakarya Uygulamalı Bilimler Üniversitesi (SUBÜ), 2018 yılında kurulan uygulamalı
+            eğitim odaklı bir devlet üniversitesidir. Teknoloji, Uygulamalı Bilimler, Turizm
+            ve Yönetim bilimleri alanlarında lisans ve ön lisans programları sunmaktadır.
+          </p>
+          <div class="about-features">
+            <div class="afeat"><span>🎓</span><span>Uygulamalı Eğitim</span></div>
+            <div class="afeat"><span>🏭</span><span>Sanayi İş Birlikleri</span></div>
+            <div class="afeat"><span>🔬</span><span>Ar-Ge Projeleri</span></div>
+            <div class="afeat"><span>🌍</span><span>Uluslararası Programlar</span></div>
+          </div>
+          <a href="https://www.subu.edu.tr" target="_blank" rel="noopener" class="about-link blue-link">subu.edu.tr →</a>
+        </div>
+      </div>
+
+      <!-- SAÜ -->
+      <div class="about-card2 sau-card2">
+        <div class="acard-header green-header">
+          <div class="acard-circle green-circle">SAÜ</div>
+          <div class="acard-nums">
+            <div class="astat2">
+              <span class="as2-v green-v">14+</span>
+              <span class="as2-k">Fakülte</span>
+            </div>
+            <div class="astat2">
+              <span class="as2-v green-v">100+</span>
+              <span class="as2-k">Bölüm</span>
+            </div>
+            <div class="astat2">
+              <span class="as2-v green-v">1992</span>
+              <span class="as2-k">Kuruluş</span>
+            </div>
+          </div>
+        </div>
+        <div class="acard-body">
+          <span class="about-tag green-tag">Kamu Üniversitesi</span>
+          <h3 class="about-heading">Sakarya Üniversitesi</h3>
+          <p class="about-text">
+            Sakarya Üniversitesi (SAÜ), 1992 yılında kurulan Sakarya'nın köklü araştırma
+            üniversitesidir. 14'ten fazla fakülte ve 100'ü aşkın lisans programıyla
+            mühendislikten güzel sanatlara geniş bir yelpazede eğitim sunmaktadır.
+          </p>
+          <div class="about-features">
+            <div class="afeat"><span>🔬</span><span>Araştırma Üniversitesi</span></div>
+            <div class="afeat"><span>🌍</span><span>Erasmus Programları</span></div>
+            <div class="afeat"><span>💡</span><span>Teknoloji Transfer Ofisi</span></div>
+            <div class="afeat"><span>🏆</span><span>Ar-Ge Projeleri</span></div>
+          </div>
+          <a href="https://www.sakarya.edu.tr" target="_blank" rel="noopener" class="about-link green-link">sakarya.edu.tr →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOPLULUKLAR -->
+<section class="section communities-section-new" id="topluluklar">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-label">Keşfet</p>
+      <h2 class="section-title-main">Kampüs Toplulukları</h2>
+      <p class="section-sub">Logoya tıklayarak topluluğun tüm bilgilerine ulaş</p>
+      <a href="https://wa.me/905538832657?text=Merhaba%2C%20NevGen%C3%A7%20%C3%BCzerinden%20topluluk%20ba%C5%9Fvurusu%20yapmak%20istiyorum." class="cta-apply" target="_blank" rel="noopener">+ Topluluk Başvurusu</a>
+    </div>
+
+    <div class="filter-bar">
+      <div class="search-wrap">
+        <svg class="si" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="6.5" cy="6.5" r="5"/><path d="M11 11l3 3"/>
+        </svg>
+        <input type="text" id="searchInput" placeholder="Topluluk ara…" class="search-input-new" />
+      </div>
+      <div class="filter-tabs-new" id="filterTabs">
+        <button class="ftab active" data-cat="all">Tümü</button>
+      </div>
+    </div>
+
+    <div class="communities-grid-new" id="communitiesGrid">
+      <div class="loading-state"><div class="spinner"></div><p>Topluluklar yükleniyor…</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer-new">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand-col">
+        <div class="footer-brand">
+          <img src="logomuz.png" alt="NevGenç" class="brand-logo-img" />
+          <span class="brand-text footer-brand-text">NevGenç</span>
+        </div>
+        <p>SUBÜ & SAÜ öğrencileri için kampüs toplulukları platformu.</p>
+        <div class="footer-partners">
+          <span class="fp-tag">SUBÜ</span>
+          <span class="fp-x">×</span>
+          <span class="fp-tag green">SAÜ</span>
+        </div>
+      </div>
+      <div class="footer-links-col">
+        <h4>Bağlantılar</h4>
+        <a href="#topluluklar">Topluluklar</a>
+        <a href="#universite">Üniversiteler</a>
+        <a href="https://wa.me/905538832657?text=Merhaba%2C%20i%C5%9Fletmem%20i%C3%A7in%20NevGen%C3%A7%27te%20reklam%20ba%C5%9Fvurusu%20yapmak%20istiyorum." target="_blank" rel="noopener">Reklam Başvurusu</a>
+      </div>
+      <div class="footer-links-col">
+        <h4>Kurumlar</h4>
+        <a href="https://www.subu.edu.tr" target="_blank">subu.edu.tr</a>
+        <a href="https://www.sakarya.edu.tr" target="_blank">sakarya.edu.tr</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 NevGenç. Sakarya Uygulamalı Bilimler Üniversitesi & Sakarya Üniversitesi</span>
+    </div>
+  </div>
+</footer>
+
+<!-- İLETİŞİM -->
+<div class="contact-fab" id="contactFab">
+  <button class="contact-fab-btn" onclick="toggleContactPanel()" aria-label="Bizimle İletişime Geçin">
+    <span>💬</span>
+  </button>
+  <div class="contact-panel" id="contactPanel">
+    <p class="contact-panel-title">Bizimle İletişime Geçin</p>
+    <p class="contact-panel-note">Soruların, önerilerin ve iş birliği için bize ulaşın.</p>
+    <a class="contact-item wa" href="https://wa.me/905538832657" target="_blank" rel="noopener">
+      <span>📱</span>
+      <span>0553 883 26 57</span>
+    </a>
+    <a class="contact-item" href="mailto:nevgenc54@gmail.com">
+      <span>📧</span>
+      <span>nevgenc54@gmail.com</span>
+    </a>
+    <a class="contact-btn wa" href="https://wa.me/905538832657?text=Merhaba%2C%20NevGen%C3%A7%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">
+      💬 WhatsApp'tan Ulaş
+    </a>
+    <a class="contact-btn" href="mailto:nevgenc54@gmail.com?subject=NevGenç%20ile%20İletişim">
+      ✉️ E-posta Gönder
+    </a>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script>
+let allCommunities = [];
+let activeCategory = 'all';
+
+function escHtml(str) {
+  return String(str ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function loadStats() {
+  const totalMembers = COMMUNITIES.reduce((s, c) => s + (c.member_count || 0), 0);
+  document.getElementById('statCommunities').textContent = COMMUNITIES.length;
+  document.getElementById('statMembers').textContent = totalMembers > 999 ? (totalMembers/1000).toFixed(1)+'K' : totalMembers;
+}
+
+function loadCommunities() {
+  const sorted = [...COMMUNITIES].sort((a, b) => (a.name || '').localeCompare(b.name || '', 'tr'));
+  allCommunities = sorted;
+  buildCategoryTabs(sorted);
+  renderCommunities(sorted);
+}
+
+function buildCategoryTabs(communities) {
+  const cats = ['all', ...new Set(communities.map(c => c.category).filter(Boolean))];
+  const tabs = document.getElementById('filterTabs');
+  tabs.innerHTML = cats.map(cat => `
+    <button class="ftab ${cat==='all'?'active':''}" data-cat="${escHtml(cat)}" onclick="filterByCategory('${escHtml(cat)}')">
+      ${cat==='all' ? 'Tümü' : escHtml(cat)}
+    </button>
+  `).join('');
+}
+
+function filterByCategory(cat) {
+  activeCategory = cat;
+  document.querySelectorAll('.ftab').forEach(t => t.classList.toggle('active', t.dataset.cat === cat));
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  applyFilter(cat, q);
+}
+
+document.getElementById('searchInput').addEventListener('input', e => applyFilter(activeCategory, e.target.value.toLowerCase()));
+
+function applyFilter(cat, q) {
+  const filtered = allCommunities.filter(c => {
+    const matchCat = cat === 'all' || c.category === cat;
+    const matchQ = !q || c.name.toLowerCase().includes(q) || (c.description||'').toLowerCase().includes(q);
+    return matchCat && matchQ;
+  });
+  renderCommunities(filtered);
+}
+
+function renderCommunities(list) {
+  const grid = document.getElementById('communitiesGrid');
+  if (!list.length) {
+    grid.innerHTML = '<div class="empty-state"><p>Uygun topluluk bulunamadı.</p></div>';
+    return;
+  }
+  grid.innerHTML = list.map(c => communityCard(c)).join('');
+}
+
+function communityCard(c) {
+  const safeName = escHtml(c.name || '');
+  const firstChar = escHtml((c.name || '?').charAt(0));
+  const logoInner = c.logo_path
+    ? `<img src="${escHtml(c.logo_path)}" alt="${safeName}" onerror="this.style.display='none';this.nextElementSibling.style.display=''" /><span class="cf" style="display:none">${firstChar}</span>`
+    : `<span class="cf">${firstChar}</span>`;
+  const desc = c.description
+    ? escHtml(c.description.length > 100 ? c.description.slice(0, 100) + '…' : c.description)
+    : 'Topluluk hakkında bilgi yakında eklenecek.';
+  return `
+    <div class="com-card-new">
+      <a href="community.html?id=${encodeURIComponent(c.id)}" class="com-logo-link" title="${safeName}">
+        <div class="com-logo-new">${logoInner}</div>
+        <div class="com-logo-overlay"><span>Detayları Gör</span></div>
+      </a>
+      <div class="com-card-body">
+        <div class="com-card-top">
+          <h3 class="com-card-name">${safeName}</h3>
+          <span class="com-cat-badge">${escHtml(c.category || 'Genel')}</span>
+        </div>
+        <p class="com-card-desc">${desc}</p>
+        <div class="com-card-footer">
+          <span class="com-chairman">👑 ${escHtml(c.chairman_name || 'Belirtilmemiş')}</span>
+          <span class="com-members">👥 ${c.member_count || 0}</span>
+        </div>
+        <a href="community.html?id=${encodeURIComponent(c.id)}" class="com-detail-btn">Topluluk Sayfası →</a>
+      </div>
+    </div>
+  `;
+}
+
+document.addEventListener('error', e => {
+  if (e.target.tagName === 'IMG' && e.target.closest('.com-logo-new')) {
+    e.target.style.display = 'none';
+    const span = e.target.nextElementSibling;
+    if (span) span.style.display = '';
+  }
+}, true);
+
+loadStats();
+loadCommunities();
+
+function toggleMenu() {
+  document.getElementById('navMobile').classList.toggle('open');
+}
+</script>
+
+<script src="themes.js"></script>
+</body>
+</html>
