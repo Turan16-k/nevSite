@@ -1,1 +1,0 @@
-Nevgenç web sitesi
