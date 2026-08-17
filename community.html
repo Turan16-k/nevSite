@@ -28,6 +28,12 @@
     <div class="nav-links">
       <a href="index.html#topluluklar" class="nav-link">← Tüm Topluluklar</a>
     </div>
+    <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="index.html#topluluklar" onclick="toggleMenu()">← Tüm Topluluklar</a>
   </div>
 </nav>
 
@@ -381,6 +387,10 @@ function closeLightbox() {
 }
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+function toggleMenu() {
+  document.getElementById('navMobile').classList.toggle('open');
+}
 </script>
 
 <!-- İLETİŞİM -->
