@@ -1239,6 +1239,231 @@ textarea.form-input { resize: vertical; }
 .event-full-meta { font-size: 0.73rem; color: var(--ink-2); }
 .event-full-desc { font-size: 0.74rem; color: var(--ink-2); margin-top: 0.25rem; line-height: 1.4; }
 
+/* ═══════════════════════════════════════════════
+   COMMUNITY CARD PAGE (NEW COMPACT LAYOUT)
+═══════════════════════════════════════════════ */
+
+.com-card-page {
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  box-shadow: var(--sh);
+  overflow: hidden;
+}
+
+.com-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.5rem 1.5rem 1rem;
+  background: linear-gradient(160deg, var(--blue-50) 0%, var(--white) 100%);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+.com-card-logo {
+  width: 72px; height: 72px;
+  border-radius: 16px; overflow: hidden; flex-shrink: 0;
+  background: var(--white); border: 2px solid var(--border);
+  box-shadow: var(--sh-sm);
+  display: flex; align-items: center; justify-content: center;
+}
+.com-card-logo img { width: 100%; height: 100%; object-fit: cover; }
+.com-card-initial { font-size: 1.8rem; font-weight: 900; color: var(--blue); }
+
+.com-card-main { flex: 1; min-width: 0; }
+.com-card-cat {
+  display: inline-block;
+  background: var(--blue-50); border: 1px solid var(--blue-100);
+  color: var(--blue); padding: 0.12rem 0.55rem;
+  border-radius: 4px; font-size: 0.65rem; font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.com-card-name {
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  font-weight: 900; color: var(--ink);
+  letter-spacing: -0.02em; margin-bottom: 0.4rem;
+  line-height: 1.2;
+}
+.com-card-meta {
+  display: flex; align-items: center; gap: 0.4rem;
+  flex-wrap: wrap; font-size: 0.75rem; color: var(--ink-2);
+}
+.com-card-meta .dot { color: var(--border); }
+
+.com-card-abbr {
+  background: var(--blue); color: #fff;
+  padding: 0.25rem 0.65rem;
+  border-radius: 50px; font-size: 0.7rem; font-weight: 800;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  flex-shrink: 0; margin-top: 0.15rem;
+}
+
+.com-card-contact {
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+.com-contact-link {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  padding: 0.35rem 0.65rem;
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 50px; font-size: 0.7rem; font-weight: 600;
+  color: var(--ink-2); text-decoration: none;
+  transition: all 0.15s;
+}
+.com-contact-link:hover {
+  border-color: var(--blue); color: var(--blue); background: var(--blue-50);
+}
+
+.com-card-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 0;
+}
+@media (max-width: 768px) {
+  .com-card-grid { grid-template-columns: 1fr; }
+}
+
+.com-card-col { padding: 1.25rem; }
+.com-card-col:first-child { border-right: 1px solid var(--border); }
+@media (max-width: 768px) {
+  .com-card-col:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+}
+
+.com-card-section {
+  margin-bottom: 1.25rem;
+}
+.com-card-section:last-child { margin-bottom: 0; }
+.com-card-section-title {
+  font-size: 0.8rem; font-weight: 700; color: var(--ink);
+  text-transform: uppercase; letter-spacing: 0.06em;
+  margin-bottom: 0.75rem; padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border-2);
+  display: flex; align-items: center; gap: 0.4rem;
+}
+
+.com-card-desc { color: var(--ink-2); font-size: 0.85rem; line-height: 1.7; }
+
+/* YÖNETİM EKİBİ */
+.com-team-list { display: flex; flex-direction: column; gap: 0.5rem; }
+.com-team-member {
+  display: flex; align-items: center; gap: 0.6rem;
+  padding: 0.5rem; background: #FFFBEB; border: 1px solid #FDE68A;
+  border-radius: var(--r-sm);
+}
+.com-team-avatar {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; flex-shrink: 0;
+}
+.com-team-avatar.crown { font-size: 1.2rem; }
+.com-team-role { font-size: 0.6rem; color: #B45309; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; line-height: 1; }
+.com-team-name { font-size: 0.8rem; font-weight: 600; color: var(--ink); line-height: 1.2; }
+
+/* İSTATİSTİKLER */
+.com-card-stats { background: var(--bg); padding: 1rem; border-radius: var(--r); border: 1px solid var(--border); }
+.com-stats-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem;
+}
+.com-stat { text-align: center; }
+.com-stat-label { display: block; font-size: 0.65rem; color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.2rem; }
+.com-stat-value { font-size: 1.25rem; font-weight: 800; color: var(--blue); line-height: 1; }
+
+/* ETKİNLİK KARTI */
+.com-event-card {
+  display: flex; gap: 0.75rem;
+  padding: 0.75rem; background: var(--white);
+  border: 1px solid var(--border); border-radius: var(--r-sm);
+  margin-bottom: 0.5rem; transition: all 0.15s;
+}
+.com-event-card:last-child { margin-bottom: 0; }
+.com-event-card:hover { border-color: var(--blue-100); box-shadow: var(--sh-xs); }
+.com-event-img { width: 60px; height: 45px; object-fit: cover; border-radius: var(--r-sm); flex-shrink: 0; }
+.com-event-body { flex: 1; min-width: 0; }
+.com-event-title { font-size: 0.8rem; font-weight: 600; color: var(--ink); margin-bottom: 0.15rem; line-height: 1.3; }
+.com-event-meta { font-size: 0.68rem; color: var(--ink-2); line-height: 1.4; }
+
+/* GALERİ MİNİ */
+.com-gallery-mini { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.4rem; }
+.com-gallery-item {
+  aspect-ratio: 1; border-radius: var(--r-sm); overflow: hidden;
+  position: relative; cursor: pointer; background: var(--bg); border: 1px solid var(--border);
+}
+.com-gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+.com-gallery-item:hover img { transform: scale(1.07); }
+.com-gallery-item .gallery-overlay { position: absolute; inset: 0; background: rgba(0,82,165,0.75); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; opacity: 0; transition: opacity 0.2s; }
+.com-gallery-item:hover .gallery-overlay { opacity: 1; }
+
+/* PAYLAŞIM MİNİ */
+.com-posts-mini { display: flex; flex-direction: column; gap: 0.6rem; }
+.com-post-mini {
+  display: flex; gap: 0.6rem;
+  padding: 0.6rem; background: var(--bg); border: 1px solid var(--border-2);
+  border-radius: var(--r-sm);
+}
+.com-post-img { width: 50px; height: 40px; object-fit: cover; border-radius: var(--r-sm); flex-shrink: 0; }
+.com-post-body { flex: 1; min-width: 0; }
+.com-post-text { font-size: 0.78rem; color: var(--ink-2); line-height: 1.5; margin-bottom: 0.25rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.com-post-foot { display: flex; gap: 0.75rem; font-size: 0.65rem; color: var(--ink-3); }
+
+/* GEÇMİŞ ETKİNLİKLER */
+.com-card-past { margin-top: 0.5rem; padding-top: 1rem; border-top: 1px solid var(--border-2); }
+.com-past-list { display: flex; flex-direction: column; gap: 0.4rem; }
+.com-past-item {
+  display: flex; gap: 0.6rem;
+  padding: 0.5rem; background: var(--bg); border: 1px solid var(--border-2);
+  border-radius: var(--r-sm); opacity: 0.85;
+}
+.com-past-img { width: 50px; height: 38px; object-fit: cover; border-radius: var(--r-sm); flex-shrink: 0; }
+.com-past-placeholder { width: 50px; height: 38px; border-radius: var(--r-sm); flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: var(--border-2); font-size: 0.9rem; }
+.com-past-body { flex: 1; min-width: 0; }
+.com-past-title { font-size: 0.76rem; font-weight: 600; color: var(--ink); margin-bottom: 0.1rem; line-height: 1.3; }
+.com-past-meta { font-size: 0.65rem; color: var(--ink-2); line-height: 1.3; }
+
+.com-card-empty { font-size: 0.8rem; color: var(--ink-3); text-align: center; padding: 1rem 0; }
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .com-card-header { padding: 1.25rem; gap: 1rem; }
+  .com-card-logo { width: 60px; height: 60px; border-radius: 12px; }
+  .com-card-name { font-size: 1.25rem; }
+  .com-card-meta { font-size: 0.7rem; }
+  .com-card-abbr { padding: 0.2rem 0.5rem; font-size: 0.65rem; }
+  .com-card-contact { padding: 0.6rem 1.25rem; gap: 0.4rem; }
+  .com-contact-link { padding: 0.3rem 0.55rem; font-size: 0.65rem; }
+  .com-card-col { padding: 1rem; }
+  .com-stats-grid { gap: 0.5rem; }
+  .com-stat-value { font-size: 1.1rem; }
+}
+
+@media (max-width: 480px) {
+  .com-card-header { flex-direction: column; align-items: flex-start; }
+  .com-card-abbr { align-self: flex-start; }
+  .com-card-grid { gap: 0; }
+  .com-card-col { padding: 0.85rem; }
+  .com-card-section-title { font-size: 0.75rem; }
+  .com-card-desc { font-size: 0.8rem; }
+  .com-team-member { padding: 0.4rem; gap: 0.5rem; }
+  .com-team-avatar { width: 28px; height: 28px; font-size: 0.9rem; }
+  .com-team-name { font-size: 0.76rem; }
+  .com-team-role { font-size: 0.55rem; }
+  .com-stats-grid { grid-template-columns: repeat(4, 1fr); }
+  .com-stat-value { font-size: 1rem; }
+  .com-stat-label { font-size: 0.6rem; }
+  .com-event-card { flex-direction: column; gap: 0.5rem; padding: 0.6rem; }
+  .com-event-img { width: 100%; height: 80px; }
+  .com-gallery-mini { grid-template-columns: repeat(2, 1fr); gap: 0.3rem; }
+  .com-post-mini { flex-direction: column; gap: 0.4rem; }
+  .com-post-img { width: 100%; height: 80px; }
+  .com-past-item { flex-direction: column; gap: 0.4rem; padding: 0.45rem; }
+  .com-past-img, .com-past-placeholder { width: 100%; height: 80px; }
+}
+
 .not-found { min-height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; text-align: center; padding: 2rem; }
 .not-found h2 { font-size: 1.5rem; font-weight: 700; color: var(--ink); }
 .not-found p { color: var(--ink-2); }
