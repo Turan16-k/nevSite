@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Topluluk — NevGenç</title>
+  <title>Topluluk â€” NevGenÃ§</title>
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -13,35 +13,35 @@
 <body>
 <canvas id="themeCanvas"></canvas>
 
-<!-- NAVİGASYON -->
+<!-- NAVÄ°GASYON -->
 <nav class="navbar">
   <div class="nav-container">
     <div class="nav-brand">
       <a href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:10px;">
-        <img src="logomuz.png" alt="NevGenç" class="brand-logo-img" />
+        <img src="logomuz.png" alt="NevGenÃ§" class="brand-logo-img" />
         <div class="brand-texts">
-          <span class="brand-text">NevGenç</span>
-          <span class="brand-sub">SUBÜ & SAÜ</span>
+          <span class="brand-text">NevGenÃ§</span>
+          <span class="brand-sub">SUBÃœ & SAÃœ</span>
         </div>
       </a>
     </div>
     <div class="nav-links">
-      <a href="index.html#topluluklar" class="nav-link">← Tüm Topluluklar</a>
+      <a href="index.html#topluluklar" class="nav-link">â† TÃ¼m Topluluklar</a>
     </div>
     <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
       <span></span><span></span><span></span>
     </button>
   </div>
   <div class="nav-mobile" id="navMobile">
-    <a href="index.html#topluluklar" onclick="toggleMenu()">← Tüm Topluluklar</a>
+    <a href="index.html#topluluklar" onclick="toggleMenu()">â† TÃ¼m Topluluklar</a>
   </div>
 </nav>
 
-<!-- İÇERİK -->
+<!-- Ä°Ã‡ERÄ°K -->
 <div id="pageContent">
   <div class="loading-full">
     <div class="spinner large-spin"></div>
-    <p>Topluluk bilgileri yükleniyor…</p>
+    <p>Topluluk bilgileri yÃ¼kleniyorâ€¦</p>
   </div>
 </div>
 
@@ -54,9 +54,9 @@ const communitySlug = params.get('slug');
 if (!communityId && !communitySlug) {
   document.getElementById('pageContent').innerHTML = `
     <div class="not-found">
-      <h2>Topluluk Bulunamadı</h2>
-      <p>Geçerli bir topluluk ID'si veya kısaltması belirtilmedi.</p>
-      <a href="index.html" class="cta-primary">Ana Sayfaya Dön</a>
+      <h2>Topluluk BulunamadÄ±</h2>
+      <p>GeÃ§erli bir topluluk ID'si veya kÄ±saltmasÄ± belirtilmedi.</p>
+      <a href="index.html" class="cta-primary">Ana Sayfaya DÃ¶n</a>
     </div>
   `;
 } else {
@@ -76,9 +76,9 @@ function loadCommunityPage(id, slug) {
   if (!community || !numericId) {
     document.getElementById('pageContent').innerHTML = `
       <div class="not-found">
-        <h2>Topluluk Bulunamadı</h2>
-        <p>Bu topluluk mevcut değil veya silinmiş olabilir.</p>
-        <a href="index.html" class="cta-primary">Ana Sayfaya Dön</a>
+        <h2>Topluluk BulunamadÄ±</h2>
+        <p>Bu topluluk mevcut deÄŸil veya silinmiÅŸ olabilir.</p>
+        <a href="index.html" class="cta-primary">Ana Sayfaya DÃ¶n</a>
       </div>
     `;
     return;
@@ -90,7 +90,7 @@ function loadCommunityPage(id, slug) {
     .filter(p => p.community_id === numericId)
     .sort((a, b) => (b.created_at || '').localeCompare(a.created_at || ''));
 
-  document.title = community.name + " — NevGenç";
+  document.title = community.name + " â€” NevGenÃ§";
 
   const now = new Date();
   const upcomingEvents = (events || []).filter(e => new Date(e.event_date) >= now);
@@ -108,7 +108,7 @@ function loadCommunityPage(id, slug) {
   // ---- TEMPLATE ----
   document.getElementById('pageContent').innerHTML = `
 
-    <!-- KART BAŞLIK -->
+    <!-- KART BAÅLIK -->
     <div class="com-card-page">
       <div class="com-card-header">
         <div class="com-card-logo">${logoEl}</div>
@@ -116,104 +116,148 @@ function loadCommunityPage(id, slug) {
           <div class="com-card-cat">${escHtml(community.category || 'Genel')}</div>
           <h1 class="com-card-name">${_safeName}</h1>
           <div class="com-card-meta">
-            <span>👑 ${escHtml(community.chairman_name || 'Belirtilmemiş')}</span>
-            <span class="dot">·</span>
-            <span>👥 ${community.member_count || 0} üye</span>
-            <span class="dot">·</span>
-            <span>⭐ ${(community.score||0).toFixed(0)} puan</span>
+            <span>ğŸ‘‘ ${escHtml(community.chairman_name || 'BelirtilmemiÅŸ')}</span>
+            <span class="dot">Â·</span>
+            <span>ğŸ‘¥ ${community.member_count || 0} Ã¼ye</span>
+            <span class="dot">Â·</span>
+            <span>â­ ${(community.score||0).toFixed(0)} puan</span>
           </div>
         </div>
         ${community.abbreviation ? `<div class="com-card-abbr">${escHtml(community.abbreviation)}</div>` : ''}
       </div>
 
-      <!-- İLETİŞİM HIZLI -->
+      <!-- Ä°LETÄ°ÅÄ°M HIZLI -->
       ${(community.contact_info || community.social_instagram || community.social_twitter || community.social_linkedin) ? `
       <div class="com-card-contact">
-        ${community.contact_info ? `<a class="com-contact-link" href="tel:${community.contact_info.replace(/\s/g,'')}">📱 ${escHtml(community.contact_info)}</a>` : ''}
-        ${community.social_instagram ? `<a class="com-contact-link" href="https://instagram.com/${encodeURIComponent(community.social_instagram.replace('@',''))}" target="_blank" rel="noopener">📸 ${escHtml(community.social_instagram)}</a>` : ''}
-        ${community.social_twitter ? `<a class="com-contact-link" href="https://twitter.com/${encodeURIComponent(community.social_twitter.replace('@',''))}" target="_blank" rel="noopener">🐦 ${escHtml(community.social_twitter)}</a>` : ''}
-        ${community.social_linkedin ? `<a class="com-contact-link" href="${escHtml(community.social_linkedin)}" target="_blank" rel="noopener">💼 LinkedIn</a>` : ''}
+        ${community.contact_info ? `<a class="com-contact-link" href="tel:${community.contact_info.replace(/\s/g,'')}">ğŸ“± ${escHtml(community.contact_info)}</a>` : ''}
+        ${community.social_instagram ? `<a class="com-contact-link" href="https://instagram.com/${encodeURIComponent(community.social_instagram.replace('@',''))}" target="_blank" rel="noopener">ğŸ“¸ ${escHtml(community.social_instagram)}</a>` : ''}
+        ${community.social_twitter ? `<a class="com-contact-link" href="https://twitter.com/${encodeURIComponent(community.social_twitter.replace('@',''))}" target="_blank" rel="noopener">ğŸ¦ ${escHtml(community.social_twitter)}</a>` : ''}
+        ${community.social_linkedin ? `<a class="com-contact-link" href="${escHtml(community.social_linkedin)}" target="_blank" rel="noopener">ğŸ’¼ LinkedIn</a>` : ''}
       </div>` : ''}
 
-      <!-- ANA GRID: 2 sütun (desktop), 1 sütun (mobile) -->
+      <!-- ANA GRID: 2 sÃ¼tun (desktop), 1 sÃ¼tun (mobile) -->
       <div class="com-card-grid">
 
-        <!-- SOL: Hakkında + Yönetim + İstatistikler -->
+        <!-- SOL: HakkÄ±nda + YÃ¶netim + Ä°statistikler -->
         <div class="com-card-col">
 
-          <!-- HAKKINDA -->
+          <!-- MÄ°SYON / VÄ°ZYON / DEÄERLER -->
+          ${community.mission || community.vision || community.values ? `
           <div class="com-card-section">
-            <h2 class="com-card-section-title">📖 Hakkımızda</h2>
-            <p class="com-card-desc">${escHtml(community.description || 'Bu topluluk henüz açıklama eklememiş.')}</p>
-          </div>
+            <h2 class="com-card-section-title">ğŸ¯ AmacÄ±mÄ±z</h2>
+            <div class="com-mvv-grid">
+              ${community.mission ? `
+              <div class="com-mvv-card">
+                <div class="com-mvv-icon">ğŸ¯</div>
+                <div class="com-mvv-title">Misyon</div>
+                <p class="com-mvv-text">${escHtml(community.mission)}</p>
+              </div>` : ''}
+              ${community.vision ? `
+              <div class="com-mvv-card">
+                <div class="com-mvv-icon">ğŸ”­</div>
+                <div class="com-mvv-title">Vizyon</div>
+                <p class="com-mvv-text">${escHtml(community.vision)}</p>
+              </div>` : ''}
+              ${community.values && community.values.length > 0 ? `
+              <div class="com-mvv-card">
+                <div class="com-mvv-icon">ğŸ’</div>
+                <div class="com-mvv-title">DeÄŸerlerimiz</div>
+                <ul class="com-values-list">
+                  ${community.values.map(v => `<li>${escHtml(v)}</li>`).join('')}
+                </ul>
+              </div>` : ''}
+            </div>
+          </div>` : `
+          <!-- HAKKINDA (eski format) -->
+          <div class="com-card-section">
+            <h2 class="com-card-section-title">ğŸ“– HakkÄ±mÄ±zda</h2>
+            <p class="com-card-desc">${escHtml(community.description || 'Bu topluluk henÃ¼z aÃ§Ä±klama eklememiÅŸ.')}</p>
+          </div>`}
 
-          <!-- YÖNETİM EKİBİ -->
+          <!-- YÃ–NETÄ°M EKÄ°BÄ° (yeni zengin format) -->
           <div class="com-card-section">
-            <h2 class="com-card-section-title">👥 Yönetim Ekibi</h2>
+            <h2 class="com-card-section-title">ğŸ‘¥ YÃ¶netim Ekibi</h2>
             <div class="com-team-list">
+              ${community.team && community.team.length > 0
+                ? community.team.map(tm => `
+                  <div class="com-team-member">
+                    <span class="com-team-avatar">${escHtml(tm.role === 'BaÅŸkan' ? 'ğŸ‘‘' : tm.role === 'BaÅŸkan YardÄ±mcÄ±sÄ±' ? 'ğŸ¥ˆ' : tm.role === 'Sosyal Medya Sorumlusu' ? 'ğŸ“²' : tm.role === 'Haber & Bilgilendirme' ? 'ğŸ“°' : 'ğŸ“')}</span>
+                    <div class="com-team-info">
+                      <div class="com-team-role">${escHtml(tm.role)}</div>
+                      <div class="com-team-name">${escHtml(tm.name)}</div>
+                      ${tm.bio ? `<p class="com-team-bio">${escHtml(tm.bio)}</p>` : ''}
+                      ${tm.tags && tm.tags.length > 0 ? `
+                        <div class="com-team-tags">
+                          ${tm.tags.map(tag => `<span class="com-team-tag">${escHtml(tag)}</span>`).join('')}
+                        </div>` : ''}
+                    </div>
+                  </div>
+                `).join('')
+                : `
               <div class="com-team-member">
-                <span class="com-team-avatar crown">👑</span>
-                <div>
-                  <div class="com-team-role">Başkan</div>
-                  <div class="com-team-name">${escHtml(community.chairman_name || 'Belirtilmemiş')}</div>
+                <span class="com-team-avatar crown">ğŸ‘‘</span>
+                <div class="com-team-info">
+                  <div class="com-team-role">BaÅŸkan</div>
+                  <div class="com-team-name">${escHtml(community.chairman_name || 'BelirtilmemiÅŸ')}</div>
                 </div>
               </div>
               ${community.vice_chairman_name ? `
               <div class="com-team-member">
-                <span class="com-team-avatar">🥈</span>
-                <div>
-                  <div class="com-team-role">Başkan Yardımcısı</div>
+                <span class="com-team-avatar">ğŸ¥ˆ</span>
+                <div class="com-team-info">
+                  <div class="com-team-role">BaÅŸkan YardÄ±mcÄ±sÄ±</div>
                   <div class="com-team-name">${escHtml(community.vice_chairman_name)}</div>
                 </div>
               </div>` : ''}
               ${community.secretary_name ? `
               <div class="com-team-member">
-                <span class="com-team-avatar">📲</span>
-                <div>
+                <span class="com-team-avatar">ğŸ“²</span>
+                <div class="com-team-info">
                   <div class="com-team-role">Sosyal Medya</div>
                   <div class="com-team-name">${escHtml(community.secretary_name)}</div>
                 </div>
               </div>` : ''}
               ${community.member3_name ? `
               <div class="com-team-member">
-                <span class="com-team-avatar">📰</span>
-                <div>
+                <span class="com-team-avatar">ğŸ“°</span>
+                <div class="com-team-info">
                   <div class="com-team-role">Haber & Bilgi</div>
                   <div class="com-team-name">${escHtml(community.member3_name)}</div>
                 </div>
               </div>` : ''}
               ${community.member4_name ? `
               <div class="com-team-member">
-                <span class="com-team-avatar">📞</span>
-                <div>
-                  <div class="com-team-role">İletişim</div>
+                <span class="com-team-avatar">ğŸ“</span>
+                <div class="com-team-info">
+                  <div class="com-team-role">Ä°letiÅŸim</div>
                   <div class="com-team-name">${escHtml(community.member4_name)}</div>
                 </div>
               </div>` : ''}
+            `}
             </div>
           </div>
 
-          <!-- İSTATİSTİKLER -->
+          <!-- Ä°STATÄ°STÄ°KLER -->
           <div class="com-card-section com-card-stats">
-            <h2 class="com-card-section-title">📊 İstatistikler</h2>
+            <h2 class="com-card-section-title">ğŸ“Š Ä°statistikler</h2>
             <div class="com-stats-grid">
-              <div class="com-stat"><span class="com-stat-label">Üye</span><strong class="com-stat-value">${community.member_count||0}</strong></div>
+              <div class="com-stat"><span class="com-stat-label">Ãœye</span><strong class="com-stat-value">${community.member_count||0}</strong></div>
               <div class="com-stat"><span class="com-stat-label">Puan</span><strong class="com-stat-value">${(community.score||0).toFixed(1)}</strong></div>
               <div class="com-stat"><span class="com-stat-label">Etkinlik</span><strong class="com-stat-value">${(events||[]).length}</strong></div>
-              <div class="com-stat"><span class="com-stat-label">Paylaşım</span><strong class="com-stat-value">${(posts||[]).length}</strong></div>
+              <div class="com-stat"><span class="com-stat-label">PaylaÅŸÄ±m</span><strong class="com-stat-value">${(posts||[]).length}</strong></div>
             </div>
           </div>
 
         </div>
 
-        <!-- SAĞ: Yaklaşan Etkinlikler + Galeri + Son Paylaşımlar -->
+        <!-- SAÄ: YaklaÅŸan Etkinlikler + Galeri + Son PaylaÅŸÄ±mlar -->
         <div class="com-card-col">
 
-          <!-- YAKLAŞAN ETKİNLİKLER -->
+          <!-- YAKLAÅAN ETKÄ°NLÄ°KLER -->
           <div class="com-card-section">
-            <h2 class="com-card-section-title">📅 Yaklaşan Etkinlikler</h2>
+            <h2 class="com-card-section-title">ğŸ“… YaklaÅŸan Etkinlikler</h2>
             ${upcomingEvents.length === 0
-              ? '<p class="com-card-empty">Yaklaşan etkinlik yok.</p>'
+              ? '<p class="com-card-empty">YaklaÅŸan etkinlik yok.</p>'
               : upcomingEvents.slice(0,3).map(e => {
                   const d = new Date(e.event_date);
                   const dateStr = d.toLocaleDateString('tr-TR', {day:'numeric',month:'short'});
@@ -223,8 +267,8 @@ function loadCommunityPage(id, slug) {
                       ${e.image_url ? '<img src="' + escHtml(e.image_url) + '" class="com-event-img" alt="' + escHtml(e.title) + '" />' : ''}
                       <div class="com-event-body">
                         <div class="com-event-title">${escHtml(e.title)}</div>
-                        <div class="com-event-meta">📅 ${dateStr} ${timeStr}</div>
-                        ${e.location ? '<div class="com-event-meta">📍 ' + escHtml(e.location) + '</div>' : ''}
+                        <div class="com-event-meta">ğŸ“… ${dateStr} ${timeStr}</div>
+                        ${e.location ? '<div class="com-event-meta">ğŸ“ ' + escHtml(e.location) + '</div>' : ''}
                       </div>
                     </div>
                   `;
@@ -232,28 +276,28 @@ function loadCommunityPage(id, slug) {
             }
           </div>
 
-          <!-- FOTOĞRAF GALERİSİ (max 4) -->
+          <!-- FOTOÄRAF GALERÄ°SÄ° (max 4) -->
           ${mediaPosts.length > 0 ? `
           <div class="com-card-section">
-            <h2 class="com-card-section-title">🖼️ Fotoğraflar</h2>
+            <h2 class="com-card-section-title">ğŸ–¼ï¸ FotoÄŸraflar</h2>
             <div class="com-gallery-mini">
               ${mediaPosts.slice(0,4).map(p => {
                 const img = p.event_image || p.image_url;
                 const date = new Date(p.created_at).toLocaleDateString('tr-TR', {day:'numeric',month:'long',year:'numeric'});
                 return `
                   <div class="com-gallery-item" onclick="openLightbox('${escapeStr(img)}','${escapeStr(p.content||'')}','${escapeStr(date)}')">
-                    <img src="${escHtml(img)}" alt="Topluluk görseli" loading="lazy" />
-                    <div class="gallery-overlay"><span>🔍</span></div>
+                    <img src="${escHtml(img)}" alt="Topluluk gÃ¶rseli" loading="lazy" />
+                    <div class="gallery-overlay"><span>ğŸ”</span></div>
                   </div>
                 `;
               }).join('')}
             </div>
           </div>` : ''}
 
-          <!-- SON PAYLAŞIMLAR (max 3) -->
+          <!-- SON PAYLAÅIMLAR (max 3) -->
           ${textPosts.length > 0 ? `
           <div class="com-card-section">
-            <h2 class="com-card-section-title">📣 Son Paylaşımlar</h2>
+            <h2 class="com-card-section-title">ğŸ“£ Son PaylaÅŸÄ±mlar</h2>
             <div class="com-posts-mini">
               ${textPosts.slice(0,3).map(p => {
                 const img = p.event_image || p.image_url;
@@ -264,8 +308,8 @@ function loadCommunityPage(id, slug) {
                     <div class="com-post-body">
                       <p class="com-post-text">${escHtml(p.content)}</p>
                       <div class="com-post-foot">
-                        <span>🗓️ ${date}</span>
-                        ${p.support_count > 0 ? '<span>💜 ' + p.support_count + '</span>' : ''}
+                        <span>ğŸ—“ï¸ ${date}</span>
+                        ${p.support_count > 0 ? '<span>ğŸ’œ ' + p.support_count + '</span>' : ''}
                       </div>
                     </div>
                   </div>
@@ -277,20 +321,20 @@ function loadCommunityPage(id, slug) {
         </div>
       </div>
 
-      <!-- GEÇMİŞ ETKİNLİKLER (altta, daraltılmış) -->
+      <!-- GEÃ‡MÄ°Å ETKÄ°NLÄ°KLER (altta, daraltÄ±lmÄ±ÅŸ) -->
       ${pastEvents.length > 0 ? `
       <div class="com-card-section com-card-past">
-        <h2 class="com-card-section-title">🗓️ Geçmiş Etkinlikler</h2>
+        <h2 class="com-card-section-title">ğŸ—“ï¸ GeÃ§miÅŸ Etkinlikler</h2>
         <div class="com-past-list">
           ${pastEvents.slice(0,4).map(e => {
             const d = new Date(e.event_date);
             const dateStr = d.toLocaleDateString('tr-TR', {day:'numeric',month:'short',year:'numeric'});
             return `
               <div class="com-past-item">
-                ${e.image_url ? '<img src="' + escHtml(e.image_url) + '" class="com-past-img" alt="' + escHtml(e.title) + '" />' : '<div class="com-past-placeholder">📅</div>'}
+                ${e.image_url ? '<img src="' + escHtml(e.image_url) + '" class="com-past-img" alt="' + escHtml(e.title) + '" />' : '<div class="com-past-placeholder">ğŸ“…</div>'}
                 <div class="com-past-body">
                   <div class="com-past-title">${escHtml(e.title)}</div>
-                  <div class="com-past-meta">📅 ${dateStr}${e.location ? ' · 📍 ' + escHtml(e.location) : ''}</div>
+                  <div class="com-past-meta">ğŸ“… ${dateStr}${e.location ? ' Â· ğŸ“ ' + escHtml(e.location) : ''}</div>
                 </div>
               </div>
             `;
@@ -300,9 +344,9 @@ function loadCommunityPage(id, slug) {
 
     </div>
 
-    <!-- LİGHTBOX -->
+    <!-- LÄ°GHTBOX -->
     <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-      <button class="lb-close" onclick="closeLightbox()">✕</button>
+      <button class="lb-close" onclick="closeLightbox()">âœ•</button>
       <div class="lb-inner" onclick="event.stopPropagation()">
         <img id="lbImg" src="" alt="" />
         <div class="lb-caption" id="lbCaption"></div>
@@ -317,18 +361,18 @@ function loadCommunityPage(id, slug) {
           <div class="footer-brand-col">
             <div class="footer-brand">
               <div class="brand-icon">N</div>
-              <span class="brand-text">NevGenç</span>
+              <span class="brand-text">NevGenÃ§</span>
             </div>
-            <p>SUBÜ & SAÜ öğrencileri için kampüs toplulukları platformu.</p>
+            <p>SUBÃœ & SAÃœ Ã¶ÄŸrencileri iÃ§in kampÃ¼s topluluklarÄ± platformu.</p>
           </div>
           <div class="footer-links-col">
-            <h4>Bağlantılar</h4>
-            <a href="index.html#topluluklar">Tüm Topluluklar</a>
-            <a href="index.html#universite">Üniversiteler</a>
+            <h4>BaÄŸlantÄ±lar</h4>
+            <a href="index.html#topluluklar">TÃ¼m Topluluklar</a>
+            <a href="index.html#universite">Ãœniversiteler</a>
           </div>
         </div>
         <div class="footer-bottom">
-          <span>© 2025 NevGenç. Sakarya Uygulamalı Bilimler Üniversitesi & Sakarya Üniversitesi</span>
+          <span>Â© 2025 NevGenÃ§. Sakarya UygulamalÄ± Bilimler Ãœniversitesi & Sakarya Ãœniversitesi</span>
         </div>
       </div    </footer>
   `;
@@ -338,11 +382,11 @@ function escapeStr(s) { return s.replace(/'/g, "\\'").replace(/"/g, '\\"'); }
 
 function escHtml(str) {
   return String(str ?? '')
-    .replace(/&/g, '&')
-    .replace(/</g, '<')
-    .replace(/>/g, '>')
-    .replace(/"/g, '"')
-    .replace(/'/g, "\\'");
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
 }
 
 function openLightbox(src, caption, date) {
@@ -365,27 +409,27 @@ function toggleMenu() {
 }
 </script>
 
-<!-- İLETİŞİM FAB -->
+<!-- Ä°LETÄ°ÅÄ°M FAB -->
 <div class="contact-fab" id="contactFab">
-  <button class="contact-fab-btn" onclick="toggleContactPanel()" aria-label="Bizimle İletişime Geçin">
-    <span>💬</span>
+  <button class="contact-fab-btn" onclick="toggleContactPanel()" aria-label="Bizimle Ä°letiÅŸime GeÃ§in">
+    <span>ğŸ’¬</span>
   </button>
   <div class="contact-panel" id="contactPanel">
-    <p class="contact-panel-title">Bizimle İletişime Geçin</p>
-    <p class="contact-panel-note">Soruların, önerilerin ve iş birliği için bize ulaşın.</p>
+    <p class="contact-panel-title">Bizimle Ä°letiÅŸime GeÃ§in</p>
+    <p class="contact-panel-note">SorularÄ±n, Ã¶nerilerin ve iÅŸ birliÄŸi iÃ§in bize ulaÅŸÄ±n.</p>
     <a class="contact-item wa" href="https://wa.me/905538832657" target="_blank" rel="noopener">
-      <span>📱</span>
+      <span>ğŸ“±</span>
       <span>0553 883 26 57</span>
     </a>
     <a class="contact-item" href="mailto:nevgenc54@gmail.com">
-      <span>📧</span>
+      <span>ğŸ“§</span>
       <span>nevgenc54@gmail.com</span>
     </a>
     <a class="contact-btn wa" href="https://wa.me/905538832657?text=Merhaba%2C%20NevGen%C3%A7%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">
-      💬 WhatsApp'tan Ulaş
+      ğŸ’¬ WhatsApp'tan UlaÅŸ
     </a>
-    <a class="contact-btn" href="mailto:nevgenc54@gmail.com?subject=NevGen%C3%A7%20ile%20İletişim">
-      ✉️ E-posta Gönder
+    <a class="contact-btn" href="mailto:nevgenc54@gmail.com?subject=NevGen%C3%A7%20ile%20Ä°letiÅŸim">
+      âœ‰ï¸ E-posta GÃ¶nder
     </a>
   </div>
 </div>
