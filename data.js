@@ -40,23 +40,12 @@ const COMMUNITIES = [
     abbreviation: "GMT",
     category: "Girişimcilik",
     member_count: 10,
-    // ŞABLON: Misyon — "Ne yapıyoruz, neden varız, kime değer katıyoruz?"
-    mission: "Mühendislik disiplini ve girişimci zihniyeti birleştirerek, öğrencilerin hayali ürünü prototype'a, prototype'ını da pazara taşıyabilmesi için gerekli ekosistemi (mentorluk, ağ, finansman, beceri) kurarız.",
-    // ŞABLON: Vizyon — "5 yıl sonra nerede olacağız?"
-    vision: "SUBÜ & SAÜ'den çıkarak Türkiye'nin girişim ekosisteminde 'arayan değil, aranan' mühendis-girişimciler yetiştirmek ve en az 5 scalable startup'a imza atmak.",
-    // ŞABLON: Değerler — 3-5 maddede kültür
-    values: [
-      "Yaparak öğrenmek", "Paylaşıp büyümek", "Erken hata yapıp hızlı düzeltmek",
-      "Müşteri odaklı düşünmek", "Şeffaf ve dürüst olmak"
-    ],
-    // ŞABLON: Yönetim ekibi — her rol için: isim + 1 cümlelik bio + uzmanlık etiketleri
-    team: [
-      { role: "Başkan", name: "Ahmet Safa Zengin", bio: "Yapay zeka odaklı SaaS girişimi kurucusu, 2 hackathon ödülü. Ürün stratejisi ve büyüme odaklı.", tags: ["AI", "SaaS", "Product"] },
-      { role: "Başkan Yardımcısı", name: "Elif İkier", bio: "Finans ve iş geliştirme odaklı, yatırımcı ilişkileri ve pitch deck uzmanı. 3 startup'ta advisory.", tags: ["Fundraising", "BizDev", "Pitch"] },
-      { role: "Sosyal Medya Sorumlusu", name: "Görkem Mutlu", bio: "İçerik stratejisi ve topluluk büyümesi uzmanı. LinkedIn'de 5K+ takipçi yönetimi.", tags: ["Content", "Growth", "LinkedIn"] },
-      { role: "Haber & Bilgilendirme", name: "Yavuz Selim Eviş", bio: "Etkinlik organizasyonu ve üye iletişimi. Hackathon & workshop operasyon deneyimi.", tags: ["Events", "Ops", "Community"] },
-      { role: "İletişim Sorumlusu", name: "İclal Tezcan", bio: "Kurumsal iletişim ve sponsorluk pazarlığı. Sektör ağını kampüse taşıma odaklı.", tags: ["PR", "Partnerships", "Networking"] }
-    ],
+    description: "Girişimci ve mühendislik bakış açısıyla insana değer veren özgün ve yenilikçi faaliyetler gerçekleştirerek üniversite öğrencilerini daha donanımlı ve daha yetkin birer bireyler olarak mezun olmalarını sağlamak ve bu sayede de sektörde arayan değil aranan elemanlar olmalarını sağlamak...",
+    chairman_name: "Ahmet Safa Zengin",
+    vice_chairman_name: "Elif İkier",
+    secretary_name: "Görkem Mutlu",
+    member3_name: "Yavuz Selim Eviş",
+    member4_name: "İclal Tezcan",
     contact_info: "05314584361",
     social_instagram: "@subugirisimcimuhendisler",
     social_twitter: null,
@@ -70,19 +59,12 @@ const COMMUNITIES = [
     abbreviation: "TOT",
     category: "Kültür & Sanat",
     member_count: 9,
-    mission: "Şehrin ve üniversitenin hafızasını canlı tutmak; tarihî mekanları, olayları ve kültürel mirası akademik olmayan, hissiyatlı ve erişilebilir dille yeni nesillere aktarmak.",
-    vision: "Sakarya'nın 'tarih markası' olma yolunda gençlik tarafından sürdürülen en aktif kültür platformu olmak; yıllık 10+ şehir tarihi yürüyüşü ve 5+ ortak proje imzalamak.",
-    values: [
-      "Hakikat ve belgeye saygı", "Hikaye anlatma gücü", "Toplumsal belleği paylaşmak",
-      "Yerel kimliği koruyup evrenselleştirmek"
-    ],
-    team: [
-      { role: "Başkan", name: "İbrahim Gece", bio: "Tarih bölümü son sınıf, arkeoloji kazı deneyimli. Şehir tarihi yürüyüşü rehberliği ve oral history projeleri.", tags: ["Arkeoloji", "Rehberlik", "Oral History"] },
-      { role: "Başkan Yardımcısı", name: "Bayram Dağdaş", bio: "Kültürel miras koruma ve müze işleri ilgilisi. Belge arşivleme ve dijitalleştirme projeleri.", tags: ["Arşiv", "Dijitalleştirme", "Miras"] },
-      { role: "Sosyal Medya Sorumlusu", name: "Zeynep Yılmaz", bio: "Tarih hikayelerini Instagram Reels/karuşel formatında anlatan içerik üreticisi. Görsel arşiv araştırmacısı.", tags: ["Content", "Visual Archive", "Storytelling"] },
-      { role: "Haber & Bilgilendirme", name: "Sıla Gündüzer", bio: "Etkinlik takvimi ve üye duyuru yönetimi. Konferans & panel organizasyon deneyimi.", tags: ["Events", "Comms", "Coordination"] },
-      { role: "İletişim Sorumlusu", name: "Yiğit Efe Alkan", bio: "Belediye, müze ve sivil toplum kuruluşlarıyla iş birliği protokolleri. Harici ilişkiler.", tags: ["Partnerships", "Protocol", "NGO"] }
-    ],
+    description: "Her etkinlikte, her yolculukta, her konferansta ve her tartışmada aslında kendimizi de inşa ediyoruz çünkü biz sıradan bir öğrenci topluluğu değil; şehrin ve üniversitenin hafızasını taşıyan, kültürünü yaşatan ve geleceğe aktaran bir ruhuz. Ve tarih, bizim birlikte yazdığımız bugündür.",
+    chairman_name: "İbrahim Gece",
+    vice_chairman_name: "Bayram Dağdaş",
+    secretary_name: "Zeynep Yılmaz",
+    member3_name: "Sıla Gündüzer",
+    member4_name: "Yiğit Efe Alkan",
     contact_info: "0545 528 2245",
     social_instagram: null,
     social_twitter: null,
@@ -96,19 +78,12 @@ const COMMUNITIES = [
     abbreviation: "BSMT",
     category: "Teknoloji",
     member_count: 17,
-    mission: "Bilgisayar/BSM öğrencilerini 'sadece ders geçen' değil, 'gerçek dünya kod yazan' geliştiricilere dönüştüren pratik atölyeler, mentorluk ve proje tabanlı öğrenme ortamı sağlamak.",
-    vision: "Bölüm mezunlarının %80'inin staj/işe başlamadan önce en az 1 production-ready projeye imza atmış, GitHub profili güçlü, takım çalışması deneyimli geliştirici olarak mezun olması.",
-    values: [
-      "Clean code > hızlı kod", "Açık kaynak katkısı", "Mentor-mentee zinciri",
-      "Teknoloji agnostik yaklaşım", "Ürün odaklı düşünce"
-    ],
-    team: [
-      { role: "Başkan", name: "Melik Mirza Çelik", bio: "Full-stack developer (React/Node/PostgreSQL), 2 production proje sahibi. Açık kaynak katkıcısı. Sistem mimarisi ve ölçeklenebilirlik odaklı.", tags: ["Full-stack", "Architecture", "Open Source"] },
-      { role: "Başkan Yardımcısı", name: "Emirhan Hasan Aydın", bio: "Mobil geliştirme (Flutter/React Native) ve CI/CD pipeline uzmanı. Hackathon mentorluğu ve workshop eğitmenliği.", tags: ["Mobile", "Flutter", "DevOps", "Mentoring"] },
-      { role: "Sosyal Medya Sorumlusu", name: "Eda Görpüz", bio: "Tech content creator — kodlama yolculuğu, hata paylaşımları, kaynak önerileri. Öğrenci perspektifinden teknik yazarlık.", tags: ["Tech Writing", "Content", "DX"] },
-      { role: "Haber & Bilgilendirme", name: "Ebrar Ergül", bio: "Workshop/bootcamp operasyonları, eğitmen koordinasyonu, katılımcı deneyimi. Sprint planlama ve takip.", tags: ["Education", "Ops", "Agile"] },
-      { role: "İletişim Sorumlusu", name: "Şeymanur Aras", bio: "Şirket iş birlikleri (staj, mentor, sponsor), kariyer günü organizasyonu. Alumni ağı yönetimi.", tags: ["Career", "Partnerships", "Alumni"] }
-    ],
+    description: "Üniversite bünyesindeki nitelikli öğrencileri bulmak ve bir araya getirerek teknolojiyi birlikte keşfetmek.",
+    chairman_name: "Melik Mirza Çelik",
+    vice_chairman_name: "Emirhan Hasan Aydın",
+    secretary_name: "Eda Görpüz",
+    member3_name: "Ebrar Ergül",
+    member4_name: "Şeymanur Aras",
     contact_info: "05530460814",
     social_instagram: null,
     social_twitter: null,
@@ -122,19 +97,12 @@ const COMMUNITIES = [
     abbreviation: "DOT",
     category: "Sosyal Sorumluluk",
     member_count: 8,
-    mission: "Köy okulları, yoksul aileler, hayvan koruma ve çevre alanında somut yardım projeleri yürüterek; gönüllülüğü 'ödev' değil 'yaşam tarzı' haline getiren, empati odaklı gençlik yaratmak.",
-    vision: "Yıllık 1000+ kitap, 500+ sıcak yemek, 50+ hayvan sterilizasyonu ve 10+ köy okuluna ulaşan; gönüllü sayısı 50'yi bulan, sürdürülebilir proje döngüsü kuran kampüsün kalbi olmak.",
-    values: [
-      "Küçük dokunuş, büyük etki", "Şeffaf yardım akışı", "Gönüllü güvenliği ve büyümesi",
-      "İhtiyaç odaklı, gösteri değil"
-    ],
-    team: [
-      { role: "Başkan", name: "Aygül Aladı", bio: "Sosyal sorumluluk projeleri deneyimli (Kızılçay, TEGV). Proje yazımı, bütçe yönetimi ve gönüllü koordinasyonu.", tags: ["Proje Yönetimi", "Fundraising", "Volunteer Coord."] },
-      { role: "Başkan Yardımcısı", name: "Sıla Paraltı", bio: "Lojistik ve alan operasyonları — dağıtım rotaları, envanter, ekip yönetimi. Krizi yönetme deneyimi.", tags: ["Operations", "Logistics", "Field Ops"] },
-      { role: "Sosyal Medya Sorumlusu", name: "Çiğdem Bahadu", bio: "Etki hikayelerini (before/after, röportaj) anlatan belgeci yaklaşım. Şeffaf raporlama ve hikaye anlatımı.", tags: ["Impact Storytelling", "Transparency", "Video"] },
-      { role: "Haber & Bilgilendirme", name: "Ebrar Yazıcı", bio: "Gönüllü onboarding, eğitim programları, motivasyon sürdürme. İç iletişim ve etkinlik hatırlatmaları.", tags: ["Onboarding", "Training", "Retention"] },
-      { role: "İletişim Sorumlusu", name: "Hatice Altıntaş", bio: "Kurum bağışçıları, belediyeler, STK'larla protokol. Resmi yazışma ve izin süreçleri.", tags: ["Institutional Relations", "Grants", "Compliance"] }
-    ],
+    description: "Kalbimizin ulaşmadığı tek bir yer, tek bir canlı kalmasın diye çabalamakta; sevgi tohumları ekip güzel çiçeklerin filizleneceğine inanmakta ve sizlerle birlikte küçük tebessümlerle büyük umutlar bırakmayı hedeflemekte ve siz gönüllülerimizle birlikte gönüllülüğü yaşatma yolunda adım atmak istemekteyiz. Çünkü biliyoruz ki, tıpkı damlanın düştüğü yerde iz bırakması gibi, biz de dokunduğumuz her kalpte kalıcı ve anlamlı bir iz bırakabileceğimize inanmaktayız.",
+    chairman_name: "Aygül Aladı",
+    vice_chairman_name: "Sıla Paraltı",
+    secretary_name: "Çiğdem Bahadu",
+    member3_name: "Ebrar Yazıcı",
+    member4_name: "Hatice Altıntaş",
     contact_info: "5454770985",
     social_instagram: null,
     social_twitter: null,
