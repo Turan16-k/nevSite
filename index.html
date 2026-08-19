@@ -212,7 +212,7 @@
     <div class="section-head">
       <p class="section-label">Keşfet</p>
       <h2 class="section-title-main">Kampüs Toplulukları</h2>
-      <p class="section-sub">Logoya tıklayarak topluluğun tüm bilgilerine ulaş</p>
+      <p class="section-sub">Listeden bir topluluk seçerek detaylarına ulaşın</p>
       <a href="https://wa.me/905538832657?text=Merhaba%2C%20NevGen%C3%A7%20%C3%BCzerinden%20topluluk%20ba%C5%9Fvurusu%20yapmak%20istiyorum." class="cta-apply" target="_blank" rel="noopener">+ Topluluk Başvurusu</a>
     </div>
 
@@ -228,7 +228,7 @@
       </div>
     </div>
 
-    <div class="communities-grid-new" id="communitiesGrid">
+    <div class="communities-grid-new list-view" id="communitiesGrid">
       <div class="loading-state"><div class="spinner"></div><p>Topluluklar yükleniyor…</p></div>
     </div>
   </div>
@@ -359,31 +359,22 @@ function renderCommunities(list) {
 
 function communityCard(c) {
   const safeName = escHtml(c.name || '');
-  const firstChar = escHtml((c.name || '?').charAt(0));
-  const logoInner = c.logo_path
-    ? `<img src="${escHtml(c.logo_path)}" alt="${safeName}" onerror="this.style.display='none';this.nextElementSibling.style.display=''" /><span class="cf" style="display:none">${firstChar}</span>`
-    : `<span class="cf">${firstChar}</span>`;
-  const desc = c.description
-    ? escHtml(c.description.length > 100 ? c.description.slice(0, 100) + '…' : c.description)
-    : 'Topluluk hakkında bilgi yakında eklenecek.';
+  const safeAbbr = escHtml(c.abbreviation || '');
+  const cat = escHtml(c.category || 'Genel');
+  const memberCount = c.member_count || 0;
+  const slug = safeAbbr ? `?slug=${safeAbbr}` : `?id=${c.id}`;
   return `
-    <div class="com-card-new">
-      <a href="community.html?id=${encodeURIComponent(c.id)}" class="com-logo-link" title="${safeName}">
-        <div class="com-logo-new">${logoInner}</div>
-        <div class="com-logo-overlay"><span>Detayları Gör</span></div>
+    <div class="com-list-item">
+      <a href="community.html${slug}" class="com-list-link">
+        <div class="com-list-main">
+          <span class="com-list-name">${safeName}</span>
+          <span class="com-list-abbr">${safeAbbr}</span>
+        </div>
+        <div class="com-list-meta">
+          <span class="com-list-cat">${cat}</span>
+          <span class="com-list-members">👥 ${memberCount} üye</span>
+        </div>
       </a>
-      <div class="com-card-body">
-        <div class="com-card-top">
-          <h3 class="com-card-name">${safeName}</h3>
-          <span class="com-cat-badge">${escHtml(c.category || 'Genel')}</span>
-        </div>
-        <p class="com-card-desc">${desc}</p>
-        <div class="com-card-footer">
-          <span class="com-chairman">👑 ${escHtml(c.chairman_name || 'Belirtilmemiş')}</span>
-          <span class="com-members">👥 ${c.member_count || 0}</span>
-        </div>
-        <a href="community.html?id=${encodeURIComponent(c.id)}" class="com-detail-btn">Topluluk Sayfası →</a>
-      </div>
     </div>
   `;
 }

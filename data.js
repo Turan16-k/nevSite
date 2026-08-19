@@ -37,6 +37,7 @@ const COMMUNITIES = [
   {
     id: 1,
     name: "Girişimci Mühendisler Topluluğu",
+    abbreviation: "GMT",
     category: "Girişimcilik",
     member_count: 10,
     description: "Girişimci ve mühendislik bakış açısıyla insana değer veren özgün ve yenilikçi faaliyetler gerçekleştirerek üniversite öğrencilerini daha donanımlı ve daha yetkin birer bireyler olarak mezun olmalarını sağlamak ve bu sayede de sektörde arayan değil aranan elemanlar olmalarını sağlamak...",
@@ -55,6 +56,7 @@ const COMMUNITIES = [
   {
     id: 2,
     name: "Tarih Öğrenci Topluluğu",
+    abbreviation: "TOT",
     category: "Kültür & Sanat",
     member_count: 9,
     description: "Her etkinlikte, her yolculukta, her konferansta ve her tartışmada aslında kendimizi de inşa ediyoruz çünkü biz sıradan bir öğrenci topluluğu değil; şehrin ve üniversitenin hafızasını taşıyan, kültürünü yaşatan ve geleceğe aktaran bir ruhuz. Ve tarih, bizim birlikte yazdığımız bugündür.",
@@ -73,6 +75,7 @@ const COMMUNITIES = [
   {
     id: 3,
     name: "Bilişim Sistemleri Mühendisliği Topluluğu",
+    abbreviation: "BSMT",
     category: "Teknoloji",
     member_count: 17,
     description: "Üniversite bünyesindeki nitelikli öğrencileri bulmak ve bir araya getirerek teknolojiyi birlikte keşfetmek.",
@@ -91,6 +94,7 @@ const COMMUNITIES = [
   {
     id: 4,
     name: "Damla Öğrenci Topluluğu",
+    abbreviation: "DOT",
     category: "Sosyal Sorumluluk",
     member_count: 8,
     description: "Kalbimizin ulaşmadığı tek bir yer, tek bir canlı kalmasın diye çabalamakta; sevgi tohumları ekip güzel çiçeklerin filizleneceğine inanmakta ve sizlerle birlikte küçük tebessümlerle büyük umutlar bırakmayı hedeflemekte ve siz gönüllülerimizle birlikte gönüllülüğü yaşatma yolunda adım atmak istemekteyiz. Çünkü biliyoruz ki, tıpkı damlanın düştüğü yerde iz bırakması gibi, biz de dokunduğumuz her kalpte kalıcı ve anlamlı bir iz bırakabileceğimize inanmaktayız.",

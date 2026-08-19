@@ -49,22 +49,28 @@
 <script>
 const params = new URLSearchParams(window.location.search);
 const communityId = params.get('id');
+const communitySlug = params.get('slug');
 
-if (!communityId) {
+if (!communityId && !communitySlug) {
   document.getElementById('pageContent').innerHTML = `
     <div class="not-found">
       <h2>Topluluk Bulunamadı</h2>
-      <p>Geçerli bir topluluk ID'si belirtilmedi.</p>
+      <p>Geçerli bir topluluk ID'si veya kısaltması belirtilmedi.</p>
       <a href="index.html" class="cta-primary">Ana Sayfaya Dön</a>
     </div>
   `;
 } else {
-  loadCommunityPage(communityId);
+  loadCommunityPage(communityId, communitySlug);
 }
 
-function loadCommunityPage(id) {
-  const numericId = Number(id);
-  const community = COMMUNITIES.find(c => c.id === numericId);
+function loadCommunityPage(id, slug) {
+  let community;
+  if (slug) {
+    community = COMMUNITIES.find(c => c.abbreviation === slug);
+  } else if (id) {
+    const numericId = Number(id);
+    community = COMMUNITIES.find(c => c.id === numericId);
+  }
   const events = EVENTS
     .filter(e => e.community_id === numericId)
     .sort((a, b) => (a.event_date || '').localeCompare(b.event_date || ''));
