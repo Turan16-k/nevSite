@@ -65,11 +65,23 @@ if (!communityId && !communitySlug) {
 
 function loadCommunityPage(id, slug) {
   let community;
+  let numericId;
   if (slug) {
     community = COMMUNITIES.find(c => c.abbreviation === slug);
+    numericId = community ? community.id : null;
   } else if (id) {
-    const numericId = Number(id);
+    numericId = Number(id);
     community = COMMUNITIES.find(c => c.id === numericId);
+  }
+  if (!community || !numericId) {
+    document.getElementById('pageContent').innerHTML = `
+      <div class="not-found">
+        <h2>Topluluk Bulunamadı</h2>
+        <p>Bu topluluk mevcut değil veya silinmiş olabilir.</p>
+        <a href="index.html" class="cta-primary">Ana Sayfaya Dön</a>
+      </div>
+    `;
+    return;
   }
   const events = EVENTS
     .filter(e => e.community_id === numericId)
