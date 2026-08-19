@@ -90,18 +90,7 @@ function loadCommunityPage(id, slug) {
     .filter(p => p.community_id === numericId)
     .sort((a, b) => (b.created_at || '').localeCompare(a.created_at || ''));
 
-  if (!community) {
-    document.getElementById('pageContent').innerHTML = `
-      <div class="not-found">
-        <h2>Topluluk Bulunamadı</h2>
-        <p>Bu topluluk mevcut değil veya silinmiş olabilir.</p>
-        <a href="index.html" class="cta-primary">Ana Sayfaya Dön</a>
-      </div>
-    `;
-    return;
-  }
-
-  document.title = `${community.name} — NevGenç`;
+  document.title = community.name + " — NevGenç";
 
   const now = new Date();
   const upcomingEvents = (events || []).filter(e => new Date(e.event_date) >= now);
@@ -109,17 +98,17 @@ function loadCommunityPage(id, slug) {
   const mediaPosts = (posts || []).filter(p => p.image_url || p.event_image);
   const textPosts = (posts || []).filter(p => p.content);
 
-  // ─── HERO BANNERı ───
+  // HERO BANNER
   const _safeName    = escHtml(community.name);
   const _safeInitial = escHtml(community.name.charAt(0));
   const logoEl = community.logo_path
-    ? `<img src="${escHtml(community.logo_path)}" alt="${_safeName}" onerror="this.parentElement.innerHTML='<span class=\\'com-hero-initial\\'>${_safeInitial}</span>'" />`
-    : `<span class="com-hero-initial">${_safeInitial}</span>`;
+    ? '<img src="' + escHtml(community.logo_path) + '" alt="' + _safeName + '" onerror="this.parentElement.innerHTML=\'<span class=\'com-hero-initial\'>' + _safeInitial + '</span>\'" />'
+    : '<span class="com-hero-initial">' + _safeInitial + '</span>';
 
-  // ─── BREADCRUMB ───
+  // BREADCRUMB
   document.getElementById('pageContent').innerHTML = `
 
-    <!-- ── HERO BANNER ── -->
+    <!-- HERO BANNER -->
     <div class="com-hero-banner">
       <div class="com-hero-bg"></div>
       <div class="container">
@@ -135,14 +124,14 @@ function loadCommunityPage(id, slug) {
               <span>👥 ${community.member_count || 0} üye</span>
               <span class="dot">·</span>
               <span>⭐ ${(community.score||0).toFixed(0)} puan</span>
-              ${community.contact_info ? `<span class="dot">·</span><span>📞 ${escHtml(community.contact_info)}</span>` : ''}
+              ${community.contact_info ? '<span class="dot">·</span><span>📞 ' + escHtml(community.contact_info) + '</span>' : ''}
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- ── ANA İÇERİK ── -->
+    <!-- ANA İÇERİK -->
     <div class="container com-page-body">
       <div class="com-page-layout">
 
@@ -155,7 +144,7 @@ function loadCommunityPage(id, slug) {
             <p class="com-about-text">${escHtml(community.description || 'Bu topluluk henüz açıklama eklememiş.')}</p>
           </div>
 
-          <!-- MED­YA GALERİSİ -->
+          <!-- MEDYA GALERİSİ -->
           ${mediaPosts.length > 0 ? `
           <div class="com-block">
             <h2 class="com-block-title">🖼️ Fotoğraf Galerisi</h2>
@@ -186,12 +175,12 @@ function loadCommunityPage(id, slug) {
                 const date = new Date(p.created_at).toLocaleDateString('tr-TR', {day:'numeric',month:'long',year:'numeric'});
                 return `
                   <div class="post-item">
-                    ${img ? `<div class="post-img"><img src="${escHtml(img)}" alt="" /></div>` : ''}
+                    ${img ? '<div class="post-img"><img src="' + escHtml(img) + '" alt="" /></div>' : ''}
                     <div class="post-body">
                       <p class="post-text">${escHtml(p.content)}</p>
                       <div class="post-foot">
                         <span>🗓️ ${date}</span>
-                        ${p.support_count > 0 ? `<span>💜 ${p.support_count} destek</span>` : ''}
+                        ${p.support_count > 0 ? '<span>💜 ' + p.support_count + ' destek</span>' : ''}
                       </div>
                     </div>
                   </div>
@@ -291,12 +280,12 @@ function loadCommunityPage(id, slug) {
                   const timeStr = d.toLocaleTimeString('tr-TR', {hour:'2-digit',minute:'2-digit'});
                   return `
                     <div class="event-side-item">
-                      ${e.image_url ? `<img src="${escHtml(e.image_url)}" class="event-side-img" alt="${escHtml(e.title)}" />` : ''}
+                      ${e.image_url ? '<img src="' + escHtml(e.image_url) + '" class="event-side-img" alt="' + escHtml(e.title) + '" />' : ''}
                       <div class="event-side-body">
                         <div class="event-side-title">${escHtml(e.title)}</div>
                         <div class="event-side-meta">📅 ${dateStr} ${timeStr}</div>
-                        ${e.location ? `<div class="event-side-meta">📍 ${escHtml(e.location)}</div>` : ''}
-                        ${e.description ? `<div class="event-side-desc">${escHtml(e.description.length>80?e.description.slice(0,80)+'…':e.description)}</div>` : ''}
+                        ${e.location ? '<div class="event-side-meta">📍 ' + escHtml(e.location) + '</div>' : ''}
+                        ${e.description ? '<div class="event-side-desc">' + escHtml(e.description.length>80?e.description.slice(0,80)+'…':e.description) + '</div>' : ''}
                       </div>
                     </div>
                   `;
@@ -329,12 +318,12 @@ function loadCommunityPage(id, slug) {
             const dateStr = d.toLocaleDateString('tr-TR', {day:'numeric',month:'long',year:'numeric'});
             return `
               <div class="event-full-card past-ev">
-                ${e.image_url ? `<img src="${escHtml(e.image_url)}" class="event-full-img" alt="${escHtml(e.title)}" />` : '<div class="event-full-img-placeholder">📅</div>'}
+                ${e.image_url ? '<img src="' + escHtml(e.image_url) + '" class="event-full-img" alt="' + escHtml(e.title) + '" />' : '<div class="event-full-img-placeholder">📅</div>'}
                 <div class="event-full-body">
                   <div class="event-full-title">${escHtml(e.title)}</div>
                   <div class="event-full-meta">📅 ${dateStr}</div>
-                  ${e.location ? `<div class="event-full-meta">📍 ${escHtml(e.location)}</div>` : ''}
-                  ${e.description ? `<div class="event-full-desc">${escHtml(e.description)}</div>` : ''}
+                  ${e.location ? '<div class="event-full-meta">📍 ' + escHtml(e.location) + '</div>' : ''}
+                  ${e.description ? '<div class="event-full-desc">' + escHtml(e.description) + '</div>' : ''}
                 </div>
               </div>
             `;
@@ -380,15 +369,15 @@ function loadCommunityPage(id, slug) {
   `;
 }
 
-function escapeStr(s) { return s.replace(/'/g,"&#39;").replace(/"/g,"&quot;"); }
+function escapeStr(s) { return s.replace(/'/g, "\\'").replace(/"/g, '\\"'); }
 
 function escHtml(str) {
   return String(str ?? '')
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;');
+    .replace(/&/g, '&')
+    .replace(/</g, '<')
+    .replace(/>/g, '>')
+    .replace(/"/g, '"')
+    .replace(/'/g, '\'');
 }
 
 function openLightbox(src, caption, date) {
@@ -430,7 +419,7 @@ function toggleMenu() {
     <a class="contact-btn wa" href="https://wa.me/905538832657?text=Merhaba%2C%20NevGen%C3%A7%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">
       💬 WhatsApp'tan Ulaş
     </a>
-    <a class="contact-btn" href="mailto:nevgenc54@gmail.com?subject=NevGenç%20ile%20İletişim">
+    <a class="contact-btn" href="mailto:nevgenc54@gmail.com?subject=NevGen%C3%A7%20ile%20İletişim">
       ✉️ E-posta Gönder
     </a>
   </div>
